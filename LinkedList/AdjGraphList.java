@@ -26,6 +26,17 @@ public class AdjGraphList {
 			System.out.println();
 		}
 	}
+	
+	public void getAdjNodes(int source) {
+		if(list1[source].size()>0) {
+			ArrayList<Integer> destinations=new ArrayList<>();
+			for(int j=0; j<list1[source].size(); j++) {
+				destinations.add(list1[source].get(j));
+			}
+			System.out.println(destinations);
+		}
+	}
+	
 	public static void main(String[] args) {
 		AdjGraphList obj=new AdjGraphList();
 		obj.addEdge(0, 1);
