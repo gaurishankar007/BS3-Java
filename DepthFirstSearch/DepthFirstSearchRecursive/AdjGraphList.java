@@ -1,9 +1,8 @@
-package breathFirstSearch;
+package depthFirstSearchRecursive;
 
 import java.util.*;
 
-import depthFirstSearchRecursive.LinkedList;
-import depthFirstSearchRecursive.QueeByLinkedList;
+import breathFirstSearch.LinkedList;
 public class AdjGraphList {
 	int vertex=4;
 	LinkedList list1 [] = new LinkedList[vertex];
@@ -41,27 +40,21 @@ public class AdjGraphList {
 		return destinations;
 	}
 	
-	public void BFS(int startnode) {
-		System.out.println("<==Printing BFS==>");
-		
+	public void depthFirstSearch(int rootnode) {
 		boolean visited[] = new boolean[this.vertex];
-		QueeByLinkedList q = new QueeByLinkedList();
-		
-		visited[startnode]=true;
-		q.enqueue(startnode);
-		
-		while(q.size()!=0) {
-			int val=q.dequeue();
-			System.out.println(val);
-			Iterator<Integer> iterate=getAdjNodes(val).iterator();
-			while(iterate.hasNext()) {
-				int adjval=iterate.next();
-				if(!visited[adjval]) {
-					q.enqueue(adjval);
-					visited[adjval]=true;
-				}
+		DFS(rootnode, visited);
+	}
+	
+	public void DFS(int rootnode, boolean visited[]) {
+		visited[rootnode] = true;
+		System.out.println(rootnode);		
+		Iterator<Integer> iterate= getAdjNodes(rootnode).iterator();
+		while(iterate.hasNext()) {
+			int AdjVal = iterate.next();
+			if(!visited[AdjVal]) {
+				DFS(AdjVal, visited);
 			}
-		}		
+		}
 	}
 	
 	public static void main(String[] args) {
@@ -73,7 +66,7 @@ public class AdjGraphList {
 		obj.printGraph();
 		System.out.println(obj.getAdjNodes(0));
 		System.out.println(obj.getAdjNodes(2));
-		obj.BFS(0);
+		obj.depthFirstSearch(0);
 		
 		
 		/*
