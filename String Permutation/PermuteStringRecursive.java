@@ -1,6 +1,6 @@
 package classwork;
 
-public class PermuteString {      
+public class PermuteStringRecursive {      
     public static void main(String[] args) {  
         String str = "ABC";  
         int len = str.length();  
