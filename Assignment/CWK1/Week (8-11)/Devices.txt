@@ -1,0 +1,7 @@
+0;IUFJKH0163;25;Tipilink;Router
+1;POIUH01563;10;Binklek;Switch
+2;FFREW0236;2;Huwai;Hub
+3;POIUJ7896;15;TeChap;Router
+4;POKJHB0147;8;Hubbble;Hub
+6;QWERTY0258;15;Riffer;Hub
+7;BJKL0148;10;Gigass;Switch
